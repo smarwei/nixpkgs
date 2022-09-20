@@ -51,11 +51,6 @@ stdenv.mkDerivation rec {
     sha256 = "Zr4N5LR7ETBIYQOYjMFSwErqlZULo+8W3CDC72toHUc=";
   };
 
-  postPatch = ''
-    chmod +x meson_post_install.py
-    patchShebangs meson_post_install.py
-  '';
-
   nativeBuildInputs = [
     appstream
     gettext
