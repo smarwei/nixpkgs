@@ -33,10 +33,6 @@ stdenv.mkDerivation rec {
     sha256 = "Hoyo2nF429WpIQJVBkokvdwz35WFx1hOExBxTJprjco=";
   };
 
-  propagatedUserEnvPkgs = [
-    evolution-data-server
-  ];
-
   nativeBuildInputs = [
     meson
     ninja
