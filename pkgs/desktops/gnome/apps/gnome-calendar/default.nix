@@ -12,7 +12,7 @@
 , libxml2
 , gnome
 , gtk4
-, evolution-data-server
+, evolution-data-server-gtk4
 , libical
 , libsoup_3
 , glib
@@ -40,7 +40,7 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     gtk4
-    evolution-data-server # waiting for GTK4 port
+    evolution-data-server-gtk4
     libical
     libsoup_3
     glib
