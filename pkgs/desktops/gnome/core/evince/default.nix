@@ -31,7 +31,6 @@
 , gsettings-desktop-schemas
 , gnome-desktop
 , dbus
-, python3
 , texlive
 , gst_all_1
 , gi-docgen
@@ -43,13 +42,13 @@
 
 stdenv.mkDerivation rec {
   pname = "evince";
-  version = "43.alpha";
+  version = "43.0";
 
   outputs = [ "out" "dev" "devdoc" ];
 
   src = fetchurl {
     url = "mirror://gnome/sources/evince/${lib.versions.major version}/${pname}-${version}.tar.xz";
-    sha256 = "PPVNKPeX74sFBL67HBaKGA1N35JcuDqfnGn+DRie9hE=";
+    sha256 = "Zr4N5LR7ETBIYQOYjMFSwErqlZULo+8W3CDC72toHUc=";
   };
 
   postPatch = ''
@@ -66,7 +65,6 @@ stdenv.mkDerivation rec {
     meson
     ninja
     pkg-config
-    python3
     wrapGAppsHook
     yelp-tools
   ];
