@@ -15,7 +15,6 @@
 , gnome-online-accounts
 , wrapGAppsHook4
 , folks
-, libgdata
 , libxml2
 , gnome
 , vala
