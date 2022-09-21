@@ -5,6 +5,7 @@
 , ninja
 , vala
 , pkg-config
+, desktop-file-utils
 , wrapGAppsHook4
 , gobject-introspection
 , gettext
@@ -35,6 +36,7 @@ stdenv.mkDerivation rec {
     gettext
     itstool
     libxml2
+    desktop-file-utils
     wrapGAppsHook4
     gobject-introspection
   ];
