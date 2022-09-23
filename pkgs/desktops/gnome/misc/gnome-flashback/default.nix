@@ -73,6 +73,11 @@ let
       -Exec=gnome-flashback
       +Exec=$out/bin/gnome-flashback
       END_PATCH
+
+      # The stable release has version 43, which compares lower than 43.alpha.
+      # https://gitlab.gnome.org/GNOME/gnome-flashback/-/issues/83
+      substituteInPlace configure configure.ac \
+        --replace "gnome-desktop-3.0 >= 43.alpha" "gnome-desktop-3.0 >= 43"
     '';
 
     postInstall = ''
