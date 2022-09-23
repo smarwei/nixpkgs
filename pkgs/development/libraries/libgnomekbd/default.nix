@@ -29,6 +29,7 @@ stdenv.mkDerivation rec {
     pkg-config
     gobject-introspection
     wrapGAppsHook
+    glib
   ];
 
   # Requires in libgnomekbd.pc
@@ -37,6 +38,11 @@ stdenv.mkDerivation rec {
     libxklavier
     glib
   ];
+
+  postInstall = ''
+    # Missing post-install script.
+    glib-compile-schemas "$out/share/glib-2.0/schemas"
+  '';
 
   passthru = {
     updateScript = gnome.updateScript {
