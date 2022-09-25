@@ -1,0 +1,18 @@
+diff --git a/src/Widgets/TerminalWidget.vala b/src/Widgets/TerminalWidget.vala
+index 63341221..f7557eaa 100644
+--- a/src/Widgets/TerminalWidget.vala
++++ b/src/Widgets/TerminalWidget.vala
+@@ -307,11 +307,14 @@ namespace Terminal {
+         public void term_ps () {
+             killed = true;
+ 
++            int tries = 0;
+             /* Check if the shell process is still alive by sending 0 signals */
+             while (Posix.kill (this.child_pid, 0) == 0) {
+                 Posix.kill (this.child_pid, Posix.Signal.HUP);
+                 Posix.kill (this.child_pid, Posix.Signal.TERM);
+                 Thread.usleep (100);
++                if (++tries >= 5)
++                    break;
+             }
+         }
