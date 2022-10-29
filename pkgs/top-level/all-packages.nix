@@ -13074,6 +13074,12 @@ with pkgs;
 
   you-get = callPackage ../tools/misc/you-get { };
 
+  httplib = callPackage ../development/libraries/httplib { };
+  lockpp = callPackage ../development/libraries/lockpp { };
+  ereignis = callPackage ../development/libraries/ereignis { };
+  saucer = callPackage ../development/libraries/saucer { };
+  olcPixelGameEngine = callPackage ../development/libraries/olcPixelGameEngine { };
+
   zasm = callPackage ../development/compilers/zasm {};
 
   zbackup = callPackage ../tools/backup/zbackup {};
@@ -18716,6 +18722,8 @@ with pkgs;
 
   fmt = fmt_7;
   fmt_latest = fmt_9;
+
+  inherit (callPackages ../development/libraries/fmt_91 { }) fmt_91;
 
   fplll = callPackage ../development/libraries/fplll {};
   fplll_20160331 = callPackage ../development/libraries/fplll/20160331.nix {};

@@ -7,7 +7,7 @@ let
   testData = fetchFromGitHub {
     owner = "nlohmann";
     repo = "json_test_data";
-    rev = "v3.0.0";
+    rev = "v3.10.5";
     sha256 = "O6p2PFB7c2KE9VqWvmTaFywbW1hSzAP5V42EuemX+ls=";
   };
 in stdenv.mkDerivation (finalAttrs: {
