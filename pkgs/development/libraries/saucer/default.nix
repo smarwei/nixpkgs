@@ -7,7 +7,7 @@
 , openssl
 , qt6
 , nlohmann_json
-, fmt_91
+, fmt_9
 , tl-expected
 , lockpp
 , ereignis
@@ -29,7 +29,7 @@ stdenv.mkDerivation {
     lockpp
     ereignis
     tl-expected
-    fmt_91
+    fmt_9
     nlohmann_json
     cmake
     qt6.qtwebchannel

@@ -5,24 +5,26 @@
 , cmake
 , libpng
 , libGL
+, libGLU
 , glew
 , xlibsWrapper
 }:
 
 stdenv.mkDerivation {
   pname = "olcPixelGameEngine";
-  version = "1.4.0";
+  version = "0.1.0";
 
   src = fetchFromGitHub {
     owner = "smarwei";
     repo = "olcPixelGameEngine";
     rev = "master";
-    sha256 = "sha256-YNd7rgnYWevwkNKcR2x3Mv2+pL5kS8a8sLIZvCpyKdk=";
+    sha256 = "sha256-5v7ICJVNitz5pP863J09U9zVI6UI9bdG9LiVxoBgH8w=";
   };
 
   nativeBuildInputs = [
     cmake
     libGL
+    libGLU
     glew
     xlibsWrapper
     libpng
