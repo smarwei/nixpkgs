@@ -165,7 +165,8 @@ with self;
 
   base = janePackage {
     pname = "base";
-    hash = "1qyycqqr4dijvxm4hhy79c964wd91kpsfvb89kna1qwgllg0hrpj";
+    version = "0.15.1";
+    hash = "sha256-CDKQVF+hAvJTo5QmRvyOfQNrdRgz6m+64q9UzNHlJEA=";
     minimumOCamlVersion = "4.10";
     meta.description = "Full standard library replacement for OCaml";
     buildInputs = [ dune-configurator ];
@@ -739,8 +740,9 @@ with self;
 
   ppx_sexp_conv = janePackage {
     pname = "ppx_sexp_conv";
-    minimumOCamlVersion = "4.04.2";
-    hash = "1fyf7hgxprn7pj58rmmrfpv938a0avpzvvk6wzihpmfm6whgbdm8";
+    version = "0.15.1";
+    minimalOCamlVersion = "4.08.0";
+    hash = "sha256-NYknZHyDklr71hihM2pPFQ7uAKkuKO2DJkjtsF+xc5g=";
     meta.description = "[@@deriving] plugin to generate S-expression conversion functions";
     propagatedBuildInputs = [ ppxlib sexplib0 base ];
   };
@@ -912,7 +914,8 @@ with self;
 
   sexplib0 = janePackage {
     pname = "sexplib0";
-    hash = "0jag0bz2173b0n7hx013fhghydhh92arqjlrcnf5x025bw8nz66v";
+    version = "0.15.1";
+    hash = "sha256-6K0yrCbVFcUalN4cQuDI1TvWvNDjfXXRDhJKUskbqRY=";
     minimumOCamlVersion = "4.04.2";
     meta.description = "Library containing the definition of S-expressions and some base converters";
   };
