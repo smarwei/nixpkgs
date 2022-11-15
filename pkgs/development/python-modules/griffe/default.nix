@@ -11,7 +11,7 @@
 
 buildPythonPackage rec {
   pname = "griffe";
-  version = "0.23.0";
+  version = "0.22.2";
   format = "pyproject";
 
   disabled = pythonOlder "3.7";
@@ -20,15 +20,8 @@ buildPythonPackage rec {
     owner = "mkdocstrings";
     repo = pname;
     rev = version;
-    hash = "sha256-eoWOkAwAd3ab9+uUfAdrYhkheibfGYkuoNQX/3nS57w=";
+    hash = "sha256-mkYtfO+wZ4vIdpCzum9uwoKMv1Xn0few8ywbvrEwxj8=";
   };
-
-  postPatch = ''
-    substituteInPlace pyproject.toml \
-      --replace 'dynamic = ["version"]' 'version = "${version}"' \
-      --replace 'license = "ISC"' 'license = {file = "LICENSE"}' \
-      --replace 'version = {source = "scm"}' 'license-expression = "ISC"'
-  '';
 
   nativeBuildInputs = [
     pdm-pep517
@@ -48,6 +41,11 @@ buildPythonPackage rec {
       aiofiles
     ];
   };
+
+  postPatch = ''
+    substituteInPlace pyproject.toml \
+      --replace 'dynamic = ["version"]' 'version = "${version}"'
+  '';
 
   pythonImportsCheck = [
     "griffe"
